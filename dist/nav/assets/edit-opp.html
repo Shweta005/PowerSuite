@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="companyname.css" media="screen"/>
+  <link rel="stylesheet" type="text/css" href="add-form.css" media="screen"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> -->
+  <title>PowerSuite</title>
+
+  <script type="module" src="/build/nav.esm.js"></script>
+  <script nomodule src="/build/nav.js"></script>
+  
+</head>
+<body>
+  <b><label id="name" > </label></b>
+  <my-crm ></my-crm>   <!-- <br>
+    <br>
+    <br> -->
+    <my-subnav list="groups.html" create="addgrp.html" ></my-subnav>
+    <div class="container">
+	 <div class="wrapper">
+       <div class="title"> EDIT OPPORTUNITY </div>
+       
+    <div class="form">
+        <div class="inputfield">
+          <label>*Name</label>
+          <input type="text" id="text1" class="input" placeholder="Name"/>
+       </div>  
+       <div class="inputfield">
+          <label>Currency</label>
+          <div class="custom_select">
+            <select>
+            <option value="Indian Rupees : Rs">Indian Rupees : Rs</option>
+            {/* <option value="Active">Active</option>
+            <option value="Deactive">Deactive</option> */}
+            </select>
+          </div>
+       </div>  
+       <div class="inputfield">
+          <label>Type</label>
+          <div class="custom_select">
+            <select id="dropdown">
+            <option value="0">Select</option>
+            <option value="5375">Existing Business</option>
+            <option value="5376">New Business</option>
+            </select>
+          </div>
+       </div>  
+       <div class="inputfield">
+          <label>*Account Name</label>
+          <div class="custom_select">
+          <select>
+          <option value="Select">Select</option>
+          <option value="B Labs">B Labs</option>
+          <option value="FF">FF</option>
+          <option value="Manpower">Manpower</option>
+          <option value="SWATI  CO.">SWATI  CO.</option>
+          <option value="Swati Traders">Swati Traders</option>
+     </select>
+          </div>
+       </div>  
+       <div class="inputfield">
+          <label>*Amount</label>
+          <input type="text" class="input" placeholder="Amount"/>
+       </div>  
+       <div class="inputfield">
+           <label htmlFor="Expected Close Date">*Expected Close Date</label>
+ 			 <input type="date"class="input"></input>
+            </div>
+        <div class="inputfield">
+        <label>Assigned To</label>
+          <div class="custom_select">
+            <select>
+            <option value="0">Select</option>
+              <option value="17">priya  naidu</option>
+              <option value="117">PRIYA  Naidu</option>
+              <option value="118">PRIYA  Naidu</option>
+            </select>
+          </div>
+          </div> 
+          <div class="inputfield">
+          <label>Campaign</label>
+          <div class="custom_select">
+            <select>
+            <option value="0">Select</option>
+              <option value="4">bala</option>
+              <option value="6">COMMTEX</option>
+              <option value="7">Naresh</option>
+              <option value="7">Naresh</option>
+            </select>
+          </div></div>
+          <div class="inputfield">
+          <label>*Status</label>
+          <div class="custom_select">
+            <select>
+            <option value="0">Select</option>
+            <option value="5323">Active</option>
+            <option value="5324">Deactive</option>
+            </select>
+          </div>
+       </div>  
+          <div class="inputfield">
+              <label>Lead Source</label>
+          <div class="custom_select">
+           <select>
+           <option value="0">Select</option>
+           <option value="5265">Advertizement</option>
+		    <option value="5266">Cold Calls</option>
+				<option value="5267">Employee Referral</option>
+				<option value="5268">External Referral</option>
+				<option value="5269">Online Store</option>
+				<option value="5270">Partner</option>
+				<option value="5271">Public Relations</option>
+				<option value="5272">Trade Show</option>
+				<option value="5273">Web Download</option>
+				<option value="5274">Web Research</option>
+     </select>
+          </div>
+       </div> 
+       <div class="inputfield">
+          <label>*Sales Stage</label>
+          <div class="custom_select">
+            <select>
+            <option value="0">Select</option>
+            <option value="5359">Closed Lost</option>
+				<option value="5358">Closed Won</option>
+				<option value="5354">Id. Decesion Makers</option>
+				<option value="5352">Need Analysis</option>
+				<option value="5357">Negotiation/Review</option>
+				<option value="5355">Perception Analysis</option>
+				<option value="5356">Proposal/Price Quote</option>
+				<option value="5351">Qualification</option>
+				<option value="5353">Value Proposition</option>
+            </select>
+          </div>
+       </div>  
+       <div class="inputfield">
+          <label>Probability (%)</label>
+          <input type="text" class="input" placeholder="Probability"/>
+       </div>
+       <div class="inputfield">
+          <label>Next Step</label>
+          <input type="text" class="input" placeholder="Next Step"/>
+       </div>
+      <div class="inputfield">
+          <label>Description</label>
+          <textarea class="input"></textarea>
+       </div> 
+      <div class="inputfield">
+        <input type="submit" value="Update" class="btn"/>
+        <input type="submit" value="Cancel" class="btn"/>
+        <input type="submit" value="Delete" class="btn"/>
+      </div> 
+	    </div>
+</div>
+</div>
+
+<script>
+    // const url='http://www.powerbooks.in/powerapi/api/PBXMLGroup/GetPBXMLGroup?cccd=FIT00000&GROUP=AAA';
+    let dropdown = document.getElementById('dropdown');
+dropdown.length = 0;
+let defaultOption = document.createElement('option');
+defaultOption.text = 'Primary';
+//<!-- dropdown.add(defaultOption); -->
+dropdown.selectedIndex = 0;	
+var cccd =sessionStorage.getItem('cccd');
+ const queryString = window.location.search;
+
+ console.log(queryString);
+const urlParams = new URLSearchParams(queryString);
+
+//const GROUP = urlParams.get('Name')
+ //console.log(GROUP); 
+const OppNo = urlParams.get('OppNo')
+
+console.log(OppNo);
+//const url ='http://powerbooks.in/powerapi/api/PBXMLGroup/GetPBXMLGroup?cccd='+cccd+'&GROUP='+GROUP; 
+ // const url ='http://powerbooks.in/powerapi/api/PBXMLGroup/GetPBXMLGroup?cccd='+cccd+'&GROUP='+GROUP;
+ //const url ='http://powerbooks.in/powerapi/api/PBXMLGroup/GetPBXMLGroup?cccd='+cccd;
+	const url='http://www.powerbooks.in/powerapi/api/PBXMLOpportunity/GetPBXMLOpportunityByID?cccd='+cccd+'&OppNo='+OppNo;  
+				fetch(url)  
+  .then(  
+    function(response) {  
+      if (response.status !== 200) {  
+        console.warn('Looks like there was a problem. Status Code: ' + 
+          response.status);  
+        return;  
+      }
+       
+console.log(response);
+      // Examine the text in the response  
+      response.json()
+	  .then(function(data) {  
+	  console.log(data);
+	   let option;
+     for (let i = 0; i < data.length; i++) {
+          option = document.createElement('option');
+      	  option.text = data[i].PARENT;
+      	 // option.value = data[i].PARENT;
+      	  dropdown.add(option);
+    	} 
+		
+		let defaultText = document.getElementById('text1');
+defaultText.text = '';
+
+       let output;
+              //  <!-- .then(users => { -->
+                //   <!-- let output = '';   -->
+                    
+              //  data.forEach(function(user) {
+			//	output = ` ${user.GROUP}`;
+      output = ` ${data.OppName}`;
+              // console.log(user.ASORIGINAL);				
+  //                        if(user.ASORIGINAL != group){ 
+	//   // <!-- alert("I m in If"); -->
+	//   document.getElementById('i_yes').checked = true;  
+	 
+	//  } 
+	//    else{ 
+	//   // <!-- alert("i m in Else"); -->
+	//   document.getElementById('i_no').checked = true; 
+	//   }      
+                            
+                
+                   // }); 
+                   
+                    document.getElementById("text1").value = output;
+                });
+         }).catch(function(err) {  
+    console.error('Fetch Error -', err);  
+  });
+</script> 
+</body>
+</html>

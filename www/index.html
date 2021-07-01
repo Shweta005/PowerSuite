@@ -1,0 +1,278 @@
+<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> --> <title>PowerSuite</title> <script type="module" src="/build/nav.esm.js" data-stencil></script> <script nomodule="" src="/build/nav.js" data-stencil></script> <style>body
+{
+  
+  margin:0px;
+  padding:0px;
+
+  /* https://i.itworldcanada.com/wp-content/uploads/2019/08/46589443h2.jpg */
+/* https://oracle-a.akamaihd.net/aug2014/1460825906/201709/2207/1460825906_5569813285001_5569809106001-vs.jpg?pubId=1460825906
+https://media.istockphoto.com/photos/enterprise-resource-planning-and-business-process-management-concept-picture-id870176228?k=6&m=870176228&s=612x612&w=0&h=ffaUo4oFylKDSO_i5kD585EnPu9wKIfvvKenn-wpLOg= */
+ 
+ /* background-size:cover;  */
+  font-family: sans-serif; 
+}
+
+ .ig{
+ 
+
+ 
+ 
+ position:fixed;
+  
+}  
+/* @media screen and ( max-width: 1024px ) {
+ img.responsive { width: 200px; }
+} */
+/* @media screen and ( min-width:1025px ) and ( max-width: 280px ) {
+img.responsive { width: 300px; }
+}
+@media screen and ( min-width: 1081px ) {
+img.responsive { width: 400px; }
+} */
+
+.loginBox
+{
+position: absolute;
+  top:60%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  width:350px;
+  height:420px;
+  padding:80px 40px;
+  box-sizing: border-box;
+  background:rgba(0,0,0,0.5) ;
+
+  
+}
+.main p 
+{
+  position:margin-bottom;
+  margin:0px;
+  padding:0 0 10px;
+  /* height:"660px";
+   width:"1200px"; */
+
+  
+} 
+
+
+h2
+{
+  margin:0;
+  padding:0 0 20px;
+  color:#1E90FF;
+  text-align:center;
+} 
+
+
+
+.loginBox p
+{
+  padding:0;
+  margin:0;
+  font-weight:bold;
+  color:#fff;
+  
+} 
+
+
+.loginBox input
+{
+  width:100%;
+  margin-bottom: 20px; 
+}
+
+.loginBox input[type="text"], .loginBox input[type="password"]
+{
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline:none;
+  height:40px;
+  color:#fff;
+  font-size: 15px;
+  
+  
+}
+.loginBox select {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid  rgb(233, 222, 222);
+  border-radius: 4px;
+  resize: vertical;
+  border-bottom: 1px solid #fff;
+  background-color: darkgrey;
+  height:40px;
+  
+  font-size: 15px;
+}
+ 
+
+.loginBox input[type="submit"]
+{
+  border:none;
+  outline:none;
+  height: 40px;
+  color:#fff;
+  font-size:16px;
+  background: rgb(255,38,126);
+  cursor:pointer;
+  border-radius:20px;
+}
+
+
+.loginBox input[type="submit"]:hover
+{
+  background: #efed40;
+  color: #262626;
+}
+.log{
+position:margin-top;
+  margin:20px;
+  padding:50px;
+  /* align-content: center; */
+  /* align:center; */
+  size:100;	
+ 
+ 
+}
+.loginBox a
+{
+  color: #fff;
+  font-size:14px;
+  font-weight:bold;
+} 
+
+
+::placeholder
+{
+  color:rgba(255,255,255,0.5); 
+}
+
+
+.user
+{
+  width:100px;
+  height:100px; 
+  overflow:hidden;
+  position:absolute;
+  top:calc(-100px/2);
+  left:calc(50% - 50px);
+  border-radius:50%;
+}</style> </head> <body> <!-- <form  id="login-form" action="main.html">
+    <input type="submit" name = ""  value="Login"/>
+    </form> --> <!-- 
+  <p-login></p-login>   --> <!-- <add-sn></add-sn> --> <!-- <span> <center><b><label id="name" > </label></b></center></span>
+
+  
+<my-component ></my-component> --> <div> <!-- <bg-img src="./build/assets/bc.jpg"></bg-img> --> <center><img src="./build/assets/home2.jpg" id="ig" class="responsive" width="1525" height="715"></center> <div class="loginBox"> <img src="./build/assets/p.jpeg" class="user"> <form id="login-form" method="post" name="myform"> <p>Username</p> <input type="text" name="username" id="username" placeholder="Enter Username" onkeyup="manage(this)" required=""> <p>Password</p> <input type="password" name="password" id="password" placeholder="Enter Password" onkeyup="manage(this)" required=""> <p>Company Name</p> <br> <select id="dropdown" class="company" name="Company"></select> <br><br> <input type="submit" id="login-form-submit" value="Login" class="save" onclick="validate()" disabled=""> <center><p><a href="#"> Forget Password</a> </p></center> </form> </div> <script>/* Disable Button till textboxes are empty */
+function manage(txt) {
+    var bt = document.getElementById('login-form-submit');
+    if (username.value != '' && password.value != '') {
+        bt.disabled = false;
+  document.getElementById("dropdown").disabled = false;
+    }
+    else {
+        bt.disabled = true;
+  document.getElementById("dropdown").disabled = true;
+    }
+}    
+
+
+// <!-- Fetching combobox value on page load -->
+let dropdown = document.getElementById('dropdown');
+dropdown.length = 0;
+
+let defaultOption = document.createElement('option');
+defaultOption.text = 'Commtex Solutions Pvt Ltd';
+
+dropdown.add(defaultOption);
+dropdown.selectedIndex = 0;
+
+const url = 'http://www.powerbooks.in/PowerAPI/api/PBXCompany/GetAllPBXCompany?cccD=HBANSODE';
+
+fetch(url)  
+.then(  
+function(response) {  
+  if (response.status !== 200) {  
+    console.warn('Looks like there was a problem. Status Code: ' + 
+      response.status);  
+    return;  
+  }
+console.log(response);
+  // Examine the text in the response  
+  response.json().then(function(data) {  
+    let option;
+console.log(data);
+  for (let i = 0; i < data.length; i++) {
+      option = document.createElement('option');
+      option.text = data[i].CCNM;
+      // <!-- option.value = data[i].GROUP; -->
+      dropdown.add(option);
+  }    
+  });  
+}  
+)  
+.catch(function(err) {  
+console.error('Fetch Error -', err);  
+});
+
+/* Validation Code */
+
+// Below function Executes on click of login button.
+function validate(){
+var username = document.getElementById("username").value;
+var password = document.getElementById("password").value;
+var comp  = document.getElementById("dropdown").value;
+
+
+const url = 'http://www.powerbooks.in/powerapi/api/PBUser/GetPowerSuiteLogin?ccnm='+comp+'&userid='+username+'&password='+password;
+
+fetch(url)  
+.then(  
+function(response) {  
+  if (response.status !== 200) {  
+    console.warn('Looks like there was a problem. Status Code: ' + 
+      response.status);  
+    return;  
+  }
+console.log(response);
+//storing user into session
+sessionStorage.setItem('uname',`${username}`); 
+console.log(sessionStorage.getItem('uname')); 
+
+
+  // Examine the text in the response 
+  response.json().then(function(data) {
+console.log(data);
+console.log("uname:"+data.UName+",upass:"+data.UPassword+",comp:"+data.CCNM);	
+
+//storing cccd into session
+sessionStorage.setItem('cccd',`${data.CCCD}`);
+	console.log(sessionStorage.getItem('cccd'));
+  if ( data.UName != null && data.UPassword != null && data.CCNM !=null){
+alert ("Login successfully");// // Check if the localStorage object exists
+
+
+window.location = "./build/assets/main.html"; // Redirecting to other page.
+return false;
+}
+else{
+alert("There was an error with your Username/Password/ Comapany Name  combination. Please try again.");
+return false;
+
+} 
+
+  });  
+}).catch(function(err) {  
+console.error('Fetch Error -', err);  
+});
+
+}</script> </div><script>if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+  // auto-unregister service worker during dev mode
+  navigator.serviceWorker.getRegistration().then(function(registration) {
+  if (registration) {
+    registration.unregister().then(function() { location.reload(true) });
+  }
+  });
+}</script></body></html>

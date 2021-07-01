@@ -1,0 +1,31 @@
+
+div {
+  float: left;
+  width: 25%;
+  box-sizing: border-box;
+}
+
+div a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px 0;
+  color: white;
+}
+
+.twitter {
+  background-color: #00aced;
+}
+
+.facebook {
+  background-color: #3b5998;
+}
+
+.FacebookMessage {
+  background-color:blue;
+}
+
+.WhatsAppMessenger {
+  background-color: green;
+}
+

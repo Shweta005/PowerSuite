@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="gridstyle.css" media="screen"/>
+  <link rel="stylesheet" type="text/css" href="companyname.css" media="screen"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> -->
+  <title>PowerSuite</title>
+
+  <script type="module" src="/build/nav.esm.js"></script>
+  <script nomodule src="/build/nav.js"></script>
+ <!-- <style>
+   #name{
+    position: absolute;
+    top: 30px;
+    right: 16px;
+    font-size: 15px;
+}
+ </style> -->
+</head>
+<body>
+<b><label  id="name"></label></b>
+  <my-component ></my-component>
+   
+  <my-subnav create="addgrp.html"></my-subnav>
+  <!-- <br>
+  <br>
+  <br> -->
+  <!-- <my-subnav></my-subnav> -->
+  <get-group></get-group> 
+  <table class="table">
+   <thead> <tr>
+      <th>GROUP</th>
+      <th>UNDER</th>
+      <!-- <th>ISADDABLE</th> -->
+      <th>SUBLEDGER</th>
+    </tr></thead>
+  <tbody id="data">
+ 
+  </tbody> 
+</table>
+
+</body>
+</html>

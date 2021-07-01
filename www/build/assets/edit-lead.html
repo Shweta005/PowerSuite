@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" type="text/css" href="companyname.css" media="screen"/>
+        <link rel="stylesheet" type="text/css" href="add-form.css" media="screen"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> -->
+  <title>PowerSuite</title>
+
+  <script type="module" src="/build/nav.esm.js"></script>
+  <script nomodule src="/build/nav.js"></script>
+
+  
+</head>
+<body>
+  <b><label id="name" > </label></b>
+  <my-crm ></my-crm>   <!-- <br>
+    <br>
+    <br> -->
+   
+    <div class="container">
+	<div class="wrapper">
+       <div class="title">  EDIT Lead	   </div>
+       
+    <div class="form">
+        <div class="inputfield">
+          <label>Lead Owner</label>
+          <input type="text"  class="input" placeholder="Lead Owner"/>
+       </div> 
+       <div class="inputfield">
+          <label>*Company</label>
+          <input type="text" class="input" placeholder="Company"/>
+       </div>  
+       <div class="inputfield">
+          <label>Title</label>
+          <input type="text" class="input" placeholder="Title"/>
+       </div> 
+       <div class="inputfield">
+          <label>First Name</label>
+          <div class="custom_select1">
+            <select class="input" >
+             <option value="Mr.">Mr.</option>
+				<option value="Mrs.">Mrs.</option>
+				<option value="Ms.">Ms.</option>
+				<option value="Dr.">Dr.</option>
+				<option value="Prof.">Prof.</option>
+            </select>
+            </div>
+            <input type="text" class="input"id="text1" placeholder="First Name"/>
+       </div>  
+       <div class="inputfield">
+          <label>*Last Name</label>
+          <input type="text" class="input" placeholder="Last Name"/>
+       </div>  
+       <div class="inputfield">
+          <label>Email</label>
+          <input type="text" class="input" placeholder="Email"/>
+          </div>
+          <div class="inputfield">
+          <label>Lead Source</label>
+          <div class="custom_select">
+            <select id="dropdown">
+            <option value="0">Select</option>
+            <option value="5265">Advertizement</option>
+				<option value="5266">Cold Calls</option>
+				<option value="5267">Employee Referral</option>
+				<option value="5268">External Referral</option>
+				<option value="5269">Online Store</option>
+				<option value="5270">Partner</option>
+				<option value="5271">Public Relations</option>
+				<option value="5272">Trade Show</option>
+				<option value="5273">Web Download</option>
+				<option value="5274">Web Research</option>
+            </select>
+          </div>
+       </div> 
+          <div class="inputfield">
+          <label>Fax</label>
+          <input type="text" class="input" placeholder="Fax"/>
+       </div>  
+       <div class="inputfield">
+          <label>Mobile</label>
+          <input type="text" class="input" placeholder="Mobile"/>
+       </div>  
+        <div class="inputfield">
+          <label>Industry</label>
+          <div class="custom_select">
+            <select>
+            <option value="0">Select</option>
+            <option value="5325">ASP</option>
+				<option value="5327">Government</option>
+				<option value="5328">Large Enterprise</option>
+				<option value="5329">ManagementISV</option>
+				<option value="5330">MSP(Management Service Provider)</option>
+				<option value="5331">Network Equipment(Enterprise)</option>
+				<option value="5332">Optical Networking</option>
+				<option value="5333">Service Provider</option>
+				<option value="5334">Small/Medium Enterprise</option>
+				<option value="5335">Storage Equipment</option>
+				<option value="5336">Storage service Provider</option>
+				<option value="5338">System Integrator</option>
+				<option value="5326">Telecom OEM</option>
+				<option value="5337">Wireless Industry</option>
+            </select>
+          </div>
+       </div>  
+       <div class="inputfield">
+           <label>Annual Revenue</label>
+           <input type="text" class="input" placeholder="Annual Revenue"/>
+            </div>
+       <div class="inputfield">
+           <label >No of Employees</label>
+           <input type="text" class="input" placeholder="No of Employees"/>
+            </div> 
+       <div class="inputfield">
+          <label>Website</label>
+          <input type="text" class="input" placeholder="Website"/>
+       </div>
+       <div class="inputfield">
+          <label>Skype ID</label>
+          <input type="text" class="input" placeholder="Skype ID"/>
+       </div>
+       <div class="inputfield">
+          <label>Lead Status</label>
+          <div class="custom_select">
+            <select>
+            <option value="0">Select</option>
+            <option value="5339">Attempted To contact</option>
+				<option value="5340">Contact in future</option>
+				<option value="5341">Contacted</option>
+				<option value="5342">Junk Lead</option>
+				<option value="5343">Lost lead</option>
+				<option value="5344">Not Contacted</option>
+				<option value="5345">Prequalified</option>
+            </select>
+          </div>
+       </div>  
+       <div class="inputfield">
+          <label>Rating</label>
+          <div class="custom_select">
+            <select>
+            <option value="0">Select</option>
+            <option value="5346">Acquired</option>
+				<option value="5347">Active</option>
+				<option value="5348">Market Failed</option>
+				<option value="5349">Project Cancelled</option>
+				<option value="5350">Shutdown</option>
+            </select>
+          </div>
+       </div>
+       <div class="inputfield">
+          <label>Country</label>
+          <input type="text" class="input" placeholder="Country"/>
+       </div>   
+       <div class="inputfield">
+          <label>Phone</label>
+          <input type="text" class="input" placeholder="Phone"/>
+       </div> 
+       <div class="inputfield">
+          <label>Street</label>
+          <input type="text" class="input" placeholder="Street"/>
+       </div> 
+       <div class="inputfield">
+           <label>City</label>
+           <input type="text" class="input" placeholder="City"/>
+            </div> 
+       <div class="inputfield">
+          <label>Zip Code</label>
+          <input type="text" class="input" placeholder="Zip Code"/>
+       </div> 
+       <div class="inputfield">
+          <label>State</label>
+          <input type="text" class="input" placeholder="State"/>
+       </div> 
+      <div class="inputfield">
+          <label>Description</label>
+          <textarea class="input"></textarea>
+       </div> 
+        
+      <div class="inputfield">
+        <input type="submit" value="Update" class="btn"/>
+        <input type="submit" value="Cancel" class="btn"/>
+        <input type="submit" value="Delete" class="btn"/>
+      </div>  
+	     </div>
+    </div>
+    </div>  
+  <script>
+    // const url='http://www.powerbooks.in/powerapi/api/PBXMLGroup/GetPBXMLGroup?cccd=FIT00000&GROUP=AAA';
+    let dropdown = document.getElementById('dropdown');
+dropdown.length = 0;
+let defaultOption = document.createElement('option');
+defaultOption.text = 'Primary';
+//<!-- dropdown.add(defaultOption); -->
+dropdown.selectedIndex = 0;	
+var cccd =sessionStorage.getItem('cccd');
+ const queryString = window.location.search;
+
+ console.log(queryString);
+const urlParams = new URLSearchParams(queryString);
+
+//const GROUP = urlParams.get('Name')
+ //console.log(GROUP);
+const LeadNo = urlParams.get('leadno')
+
+console.log(LeadNo);
+//const url ='http://powerbooks.in/powerapi/api/PBXMLGroup/GetPBXMLGroup?cccd='+cccd+'&GROUP='+GROUP; 
+ // const url ='http://powerbooks.in/powerapi/api/PBXMLGroup/GetPBXMLGroup?cccd='+cccd+'&GROUP='+GROUP;
+ //const url ='http://powerbooks.in/powerapi/api/PBXMLGroup/GetPBXMLGroup?cccd='+cccd;
+	const url='http://www.powerbooks.in/powerapi/api/PBXMLLead/GetPBXMLLeadByID?cccd='+cccd+'&leadno='+LeadNo;  
+				fetch(url)  
+  .then(  
+    function(response) {  
+      if (response.status !== 200) {  
+        console.warn('Looks like there was a problem. Status Code: ' + 
+          response.status);  
+        return;  
+      }
+       
+console.log(response);
+      // Examine the text in the response  
+      response.json()
+	  .then(function(data) {  
+	  console.log(data);
+	   let option;
+     for (let i = 0; i < data.length; i++) {
+          option = document.createElement('option');
+      	  option.text = data[i].PARENT;
+      	 // option.value = data[i].PARENT;
+      	  dropdown.add(option);
+    	} 
+		
+		let defaultText = document.getElementById('text1');
+defaultText.text = '';
+
+       let output;
+              //  <!-- .then(users => { -->
+                //   <!-- let output = '';   -->
+                    
+              //  data.forEach(function(user) {
+			//	output = ` ${user.GROUP}`;
+      output = ` ${data.FirstName}  `;
+              // console.log(user.ASORIGINAL);				
+  //                        if(user.ASORIGINAL != group){ 
+	//   // <!-- alert("I m in If"); -->
+	//   document.getElementById('i_yes').checked = true;  
+	 
+	//  } 
+	//    else{ 
+	//   // <!-- alert("i m in Else"); -->
+	//   document.getElementById('i_no').checked = true; 
+	//   }      
+                            
+                
+                   // }); 
+                   
+                    document.getElementById("text1").value = output;
+                });
+         }).catch(function(err) {  
+    console.error('Fetch Error -', err);  
+  });
+</script> 
+</body>
+</html>

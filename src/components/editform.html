@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+<style>
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+ 
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+.container{
+   /* background-color: #f3e5ab;  */
+  padding-top: 25px;
+  padding-bottom: 25px;
+  /* background-image: url(https://www.ppt-backgrounds.net/thumbs/dark-grey-texture--homes-for-unwanted-greyhounds-templates-backgrounds.jpg );   */
+  background-repeat: no-repeat;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+/* geyish middle https://i.pinimg.com/originals/d7/59/b5/d759b559ad669f9e199f1aaaa381a8ab.jpg */
+/*bluish bubble https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRYEmzLy-XY0h8ldX8s1_4B5ZC8lTgqBz7RIyEXXkt7-D8QTM6p&usqp=CAU */
+/* violet https://www.elsetge.cat/myimg/f/26-267995_published-on-november-18-2017-dark-background-image.jpg */
+/* black nd grey  https://www.ppt-backgrounds.net/thumbs/dark-grey-texture--homes-for-unwanted-greyhounds-templates-backgrounds.jpg */
+/* image https://t3.ftcdn.net/jpg/03/26/85/38/240_F_326853869_hNIYHX3pQyMpdCsAm09UbvGLo7lRBpgj.jpg */
+/*velvet color https://cdn.designsmaz.com/wp-content/uploads/2014/10/flat-design-wallpapers-HD-02.jpg */
+body{
+  background: #21a7d2;  
+  
+  padding: 0 10px;
+}
+.wrapper{
+  max-width: 500px;
+  width: 100%;
+  background:#cccbcb;
+  margin: 50px auto;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.125);
+  padding: 30px;
+}
+
+.wrapper .title{
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color:white;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.wrapper .form{
+  width: 90%;
+}
+
+.wrapper .form .inputfield{
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.wrapper .form .inputfield label{
+   width: 200px;
+   color: #0a0a0a;
+   margin-right: 15px;
+  font-size: 13px;
+}
+
+
+
+
+.wrapper .form .inputfield .input,
+.wrapper .form .inputfield .textarea{
+  width: 100%;
+  outline: none;
+  border: 1px solid #d5dbd9;
+  font-size: 15px;
+  padding: 8px 10px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.wrapper .form .inputfield .textarea{
+  width: 100%;
+  height: 125px;
+  resize: none;
+}
+
+.wrapper .form .inputfield .custom_select{
+  position: relative;
+  width: 100%;
+  height: 37px;
+}
+
+.wrapper .form .inputfield .custom_select:before{
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  border: 8px solid;
+  border-color: #d5dbd9 transparent transparent transparent;
+  pointer-events: none;
+}
+
+.wrapper .form .inputfield .custom_select select{
+  -webkit-appearance: none;
+  -moz-appearance:   none;
+  appearance:        none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  border: 0px;
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 1px solid #d5dbd9;
+  border-radius: 3px;
+}
+
+
+.wrapper .form .inputfield .input:focus,
+.wrapper .form .inputfield .textarea:focus,
+.wrapper .form .inputfield .custom_select select:focus{
+  border: 1px solid #fec107;
+}
+
+.wrapper .form .inputfield p{
+   font-size: 14px;
+   color: #757575;
+}
+.wrapper .form .inputfield .check{
+  width: 15px;
+  height: 15px;
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+.wrapper .form .inputfield .check input[type="checkbox"]{
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.wrapper .form .inputfield .check .checkmark{
+  width: 15px;
+  height: 15px;
+  border: 1px solid #fec107;
+  display: block;
+  position: relative;
+}
+.wrapper .form .inputfield .check .checkmark:before{
+  content: "";
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  width: 5px;
+  height: 2px;
+  border: 2px solid;
+  border-color: transparent transparent #fff #fff;
+  transform: rotate(-45deg);
+  display: none;
+}
+.wrapper .form .inputfield .check input[type="checkbox"]:checked ~ .checkmark{
+  background: #fec107;
+}
+
+.wrapper .form .inputfield .check input[type="checkbox"]:checked ~ .checkmark:before{
+  display: block;
+}
+
+.wrapper .form .inputfield .btn{
+  width: 100%;
+   padding: 8px 10px;
+  font-size: 15px; 
+  border: 0px;
+  background:  rgba(95, 124, 238, 0.411);
+  color: rgb(243, 239, 239);
+  font-style: bold;
+  cursor: pointer;
+  border-radius: 3px;
+  outline: none;
+}
+
+.wrapper .form .inputfield .btn:hover{
+  background:#111110a4;
+}
+
+.wrapper .form .inputfield:last-child{
+  margin-bottom: 0;
+}
+
+ @media (max-width:420px) {
+  .wrapper .form .inputfield{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .wrapper .form .inputfield label{
+    margin-bottom: 5px;
+  }
+  .wrapper .form .inputfield.terms{
+    flex-direction: row;
+  }
+} 
+</style>
+</head>
+<body>
+ <div class="container">
+      <div class="wrapper">
+       <div class="title">
+       {/* <div id="main">
+         <img src={getAssetPath(`./assets/${this.grp}`) } height="50" width="50"/> 
+        </div> */}
+     ADD GROUP
+    </div>
+    <div class="form">
+       <div class="inputfield">
+          <label>Group Name</label>
+          <input type="text" class="input" placeholder="Group Name"/>
+       </div>  
+        <div class="inputfield">
+          <label>Under</label>
+          <div class="custom_select">
+            <select id="combo1">
+            <!-- <option value="primary">Primary</option> -->
+          <!-- <option value="Bank OS A/c">Bank OD A/c</option> -->
+          <!-- <option value="Branch/divisions">Branch/Divisions</option> -->
+          <!-- <option value="Capital Account">Capital Account</option> -->
+          <!-- <option value="Cash-in-Hand">Cash-in-Hand</option> -->
+          <!-- <option value="Current Assets">Current Assets</option> -->
+          <!-- <option value="Current Liabilities">Current Liabilities</option> -->
+          <!-- <option value="Deposits(Assets)">Deposits(Assets)</option> -->
+          <!-- <option value="Duties Taxes">Duties Taxes</option> -->
+          <!-- <option value="Fixed Assets">Fixed Assets</option> -->
+          <!-- <option value="Indirect Expenses">Indirect Expenses</option> -->
+          <!-- <option value="Indirect Incomes">Indirect Incomes</option> -->
+          <!-- <option value="Investments">Investments</option> -->
+          <!-- <option value="Loans Advances(Asset)">Loans Advances(Asset)</option> -->
+          <!-- <option value="Loans(Liability)">Loans(Liability)</option> -->
+          <!-- <option value="Misc.Expenses(Asset)">Misc.Expenses(Asset)</option> -->
+          <!-- <option value="Priyaa">Priyaa</option> -->
+          <!-- <option value="Provisions">Provisions</option> -->
+          <!-- <option value="Purchase Accounts">Purchase Accounts</option>  -->
+          <!-- <option value="Reserve Surplus">Reserve Surplus</option> -->
+          <!-- <option value="Sales Account">Sales Account</option> -->
+          <!-- <option value="Secured Loans">Secured Loans</option> -->
+          <!-- <option value="Stock-in-Hands">Stock-in-Hands</option> -->
+          <!-- <option value="Sundry Creditors">Sundry Creditors</option> -->
+          <!-- <option value="Sundry Debtors">Sundry Debtors</option> -->
+          <!-- <option value="Suspense Account">Suspense Account</option> -->
+          <!-- <option value="Unsecured Loans">Unsecured Loans</option> -->
+     </select>
+          </div>
+       </div>  
+       <div class="inputfield">
+          <label>Nature Of Group</label>
+          <div class="custom_select">
+            <select>
+            <option value="Select">Select</option>
+              <option value="Asset">Assets</option>
+              <option value="Expenses">Expenses</option>
+              <option value="Income">Income</option>
+              <option value="Liabilities">Liabilities</option>
+            </select>
+          </div>
+       </div>  
+      <div class="inputfield">
+          <label>Group behaves like a Sub Ledger</label>
+          <fieldset class="input">
+           <label >Yes<input type="radio" value="value1" name="group1"/>
+    <span class="checkmark"></span>
+    </label>
+     <label >No<input type="radio" value="value2" name="group1"/>
+     </label>
+     </fieldset>
+ 
+
+       </div> 
+        <div class="inputfield">
+          <label>Net Debit / Credit Balances for Reporting</label>
+          <fieldset class="input">
+           <label >Yes<input type="radio" value="value1" name="group2"/>
+    <span class="checkmark"></span>
+    </label>
+     <label >No<input type="radio" value="value2" name="group2"/>
+     </label>
+     </fieldset>
+            </div> 
+        <div class="inputfield">
+          <label>Used for Calculation (eg. Taxes, Discounts)
+(For Sales Invoice Entry)</label>
+<fieldset class="input">
+           <label >Yes<input type="radio" value="value1" name="group3"/>
+    <span class="checkmark"></span>
+    </label>
+     <label >No<input type="radio" value="value2" name="group3"/>
+     </label>
+     </fieldset>
+       </div> 
+      <div class="inputfield">
+          <label>Method to Allocate when used in Purchase Invoice</label>
+          <div class="custom_select">
+            <select>
+           
+              <option value="NA">Not Applicable</option>
+              <option value="AQ">Appropriate By Qty</option>
+              <option value="AV">Appropriate By Value</option>
+           
+            </select>
+          </div>
+       </div> 
+      <div class="inputfield">
+          <label>Set/Alter GST Details</label>
+          <fieldset class="input">
+           <label >Yes<input type="radio" value="value1" name="group4"/>
+    <span class="checkmark"></span>
+    </label>
+     <label >No<input type="radio" value="value2" name="group4"/>
+     </label>
+     </fieldset>
+       </div> 
+       <div class="inputfield">
+          <label>Set/Alter Service Tax Details</label>
+          <fieldset class="input">
+           <label >Yes<input type="radio" value="value1" name="group5"/>
+    <span class="checkmark"></span>
+    </label>
+     <label >No<input type="radio" value="value2" name="group5"/>
+     </label>
+     </fieldset>
+       </div> 
+       <div class="inputfield">
+          <label>Set/Alter TDS Details</label>
+          <fieldset class="input">
+           <label >Yes<input type="radio" value="value1" name="group6"/>
+    <span class="checkmark"></span>
+    </label>
+     <label >No<input type="radio" value="value2" name="group6"/>
+     </label>
+     </fieldset>
+       </div> 
+       <div class="inputfield">
+          <label>Set/Alter TCS Details</label>
+          <fieldset class="input">
+           <label >Yes<input type="radio" value="value1" name="group7"/>
+    <span class="checkmark"></span>
+    </label>
+     <label >No<input type="radio" value="value2" name="group7"/>
+     </label>
+     </fieldset>
+       </div> 
+       <div class="inputfield">
+          <label>Set/Alter VAT Details</label>
+          <fieldset class="input">
+           <label >Yes<input type="radio" value="value1" name="group8"/>
+    <span class="checkmark"></span>
+    </label>
+     <label >No<input type="radio" value="value2" name="group8"/>
+     </label>
+     </fieldset>
+       </div> 
+
+      <div class="inputfield">
+        <input type="submit" value="Save" class="btn"/>
+        <input type="submit" value="Cancel" class="btn"/>
+        <input type="submit" value="Configure" class="btn"/>
+      </div>
+     
+       
+    </div>
+</div>
+</div>   
+<script>
+let dropdown = document.getElementById('combo1');
+dropdown.length = 0;
+
+let defaultOption = document.createElement('option');
+defaultOption.text = 'Primary';
+
+combo1.add(defaultOption);
+combo1.selectedIndex = 0;
+const url = 'http://powerbooks.in/powerapi/api/PBXMLGroup/GetAllPBXMLGroup?cccd=FIT00000';
+	fetch(url)  
+  .then(  
+    function(response) {  
+      if (response.status !== 200) {  
+        console.warn('Looks like there was a problem. Status Code: ' + 
+          response.status);  
+        return;  
+      }
+
+      // Examine the text in the response  
+      response.json().then(function(data) {  
+        let option;
+    
+    	for (let i = 0; i < data.length; i++) {
+          option = document.createElement('option');
+      	  option.text = data[i].PARENT;
+      	  //option.value = data[i].abbreviation;
+      	 combo1.add(option);
+    	}    
+      });  
+    }  
+  )  
+  .catch(function(err) {  
+    console.error('Fetch Error -', err);  
+  });
+</script>
+
+
+
+</body>
+</html>

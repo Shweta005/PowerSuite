@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="companyname.css" media="screen"/>
+  <link rel="stylesheet" type="text/css" href="add-form.css" media="screen"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> -->
+  <title>PowerSuite</title>
+
+  <script type="module" src="/build/nav.esm.js"></script>
+  <script nomodule src="/build/nav.js"></script>
+  
+</head>
+<body>
+  <b><label id="name" > </label></b>
+   <my-component ></my-component>  <!-- <br>
+    <br>
+    <br> -->
+    <my-subnav list="stockgroup.html" create="addstkgrp.html" ></my-subnav>
+    <div class="container">
+        <div class="wrapper">
+            <div class="title">
+          ADD ITEM
+         </div>
+         <div class="form">
+            <div class="inputfield">
+               <label> Item Group </label>
+               <input type="text" id="text1" class="input" placeholder="Group Name"/>
+            </div>  
+             <div class="inputfield">
+               <label>Under</label>
+               <div class="custom_select">
+                 <select id="dropdown">
+                 <option value="primary">Primary</option>
+               <option value="Bank OS A/c">Bank OD A/c</option>
+               <option value="Branch/divisions">Branch/Divisions</option>
+               <option value="Capital Account">Capital Account</option>
+               
+          </select>
+               </div>
+            </div>  
+            
+           <div class="inputfield">
+               <label>Should Quantities of Item be Added</label>
+               <fieldset class="input">
+                <label >Yes<input type="radio" value="value1" name="group1"/>
+         <span class="checkmark"></span>
+         </label>
+          <label >No<input type="radio" value="value2" name="group1"/>
+          </label>
+          </fieldset>
+      
+     
+            </div> 
+             <div class="inputfield">
+               <label>Set/Alter GST Details</label>
+               <fieldset class="input">
+                <label >Yes<input type="radio" value="value1" name="group2"/>
+         <span class="checkmark"></span>
+         </label>
+          <label >No<input type="radio" value="value2" name="group2"/>
+          </label>
+          </fieldset>
+                 </div>      
+            <div class="inputfield">
+               <label>Set/Alter TDS Details</label>
+               <fieldset class="input">
+                <label >Yes<input type="radio" value="value1" name="group3"/>
+         <span class="checkmark"></span>
+         </label>
+          <label >No<input type="radio" value="value2" name="group3"/>
+          </label>
+          </fieldset>
+            </div> 
+            <div class="inputfield">
+               <label>Set/Alter TCS Details</label>
+               <fieldset class="input">
+                <label >Yes<input type="radio" value="value1" name="group4"/>
+         <span class="checkmark"></span>
+         </label>
+          <label >No<input type="radio" value="value2" name="group4"/>
+          </label>
+          </fieldset>
+            </div> 
+            <div class="inputfield">
+               <label>Set/Alter VAT Details</label>
+               <fieldset class="input">
+                <label >Yes<input type="radio" value="value1" name="group5"/>
+         <span class="checkmark"></span>
+         </label>
+          <label >No<input type="radio" value="value2" name="group5"/>
+          </label>
+          </fieldset>
+            </div> 
+           <div class="inputfield">
+             <input type="submit" value="Save" class="btn"/>
+             <input type="submit" value="Cancel" class="btn"/>
+             <input type="submit" value="Delete" class="btn"/>
+             <input type="submit" value="Configure" class="btn"/>
+           </div>
+          
+            
+         </div>
+     </div>
+    </div>  
+  <script>
+    // const url='http://www.powerbooks.in/powerapi/api/PBXMLGroup/GetPBXMLGroup?cccd=FIT00000&GROUP=AAA';
+    let dropdown = document.getElementById('dropdown');
+dropdown.length = 0;
+let defaultOption = document.createElement('option');
+defaultOption.text = 'Primary';
+//<!-- dropdown.add(defaultOption); -->
+dropdown.selectedIndex = 0;	
+var cccd =sessionStorage.getItem('cccd');
+ const queryString = window.location.search;
+
+ console.log(queryString);
+const urlParams = new URLSearchParams(queryString);
+
+//const GROUP = urlParams.get('Name')
+ //console.log(GROUP);
+const Itcd = urlParams.get('Itcd')
+
+console.log(Itcd);
+//const url ='http://powerbooks.in/powerapi/api/PBXMLGroup/GetPBXMLGroup?cccd='+cccd+'&GROUP='+GROUP; 
+ // const url ='http://powerbooks.in/powerapi/api/PBXMLGroup/GetPBXMLGroup?cccd='+cccd+'&GROUP='+GROUP;
+ //const url ='http://powerbooks.in/powerapi/api/PBXMLGroup/GetPBXMLGroup?cccd='+cccd;
+	const url='http://powerbooks.in/powerapi/api/PBXMLStockGroup/GetPBXMLStockGroupById?cccd='+cccd+'&Itcd='+Itcd;  
+				fetch(url)  
+  .then(  
+    function(response) {  
+      if (response.status !== 200) {  
+        console.warn('Looks like there was a problem. Status Code: ' + 
+          response.status);  
+        return;  
+      }
+       
+console.log(response);
+      // Examine the text in the response  
+      response.json()
+	  .then(function(data) {  
+	  console.log(data);
+	   let option;
+     for (let i = 0; i < data.length; i++) {
+          option = document.createElement('option');
+      	  option.text = data[i].PARENT;
+      	 // option.value = data[i].PARENT;
+      	  dropdown.add(option);
+    	} 
+		
+		let defaultText = document.getElementById('text1');
+defaultText.text = '';
+
+       let output;
+              //  <!-- .then(users => { -->
+                //   <!-- let output = '';   -->
+                    
+              //  data.forEach(function(user) {
+			//	output = ` ${user.GROUP}`;
+      output = ` ${data.STOCKGROUP}`;
+              // console.log(user.ASORIGINAL);				
+  //                        if(user.ASORIGINAL != group){ 
+	//   // <!-- alert("I m in If"); -->
+	//   document.getElementById('i_yes').checked = true;  
+	 
+	//  } 
+	//    else{ 
+	//   // <!-- alert("i m in Else"); -->
+	//   document.getElementById('i_no').checked = true; 
+	//   }      
+                            
+                
+                   // }); 
+                   
+                    document.getElementById("text1").value = output;
+                });
+         }).catch(function(err) {  
+    console.error('Fetch Error -', err);  
+  });
+</script> 
+</body>
+</html>
